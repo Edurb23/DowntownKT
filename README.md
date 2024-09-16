@@ -13,42 +13,20 @@ Este repositório contém a primeira versão do aplicativo **Downtown**, desenvo
 Abaixo está o diagrama da estrutura de pastas do projeto para ajudar a entender a organização dos arquivos e código:
 
 
-/root (nome do projeto)
+App/
 │
-├── /app
-│   ├── /build
-│   ├── /src
-│   │   ├── /main
-│   │   │   ├── /java
-│   │   │   │   └── /br
-│   │   │   │       └── /com
-│   │   │   │           └── /downtown
-│   │   │   │               └── /activity
-│   │   │   │                   ├── MainActivity.kt
-│   │   │   │                   ├── LoginActivity.kt
-│   │   │   │                   ├── StreetMActivity.kt
-│   │   │   │                   ├── StreetFActivity.kt
-│   │   │   │                   ├── CasualMActivity.kt
-│   │   │   │                   └── CasualFActivity.kt
-│   │   │   ├── /res
-│   │   │   │   ├── /drawable
-│   │   │   │   │   ├── streetman.png
-│   │   │   │   │   ├── streetwom.png
-│   │   │   │   │   ├── casualman.png
-│   │   │   │   │   └── casualwom.png
-│   │   │   │   ├── /layout
-│   │   │   │   │   ├── activity_main.xml
-│   │   │   │   │   ├── activity_street_m.xml
-│   │   │   │   │   ├── activity_street_f.xml
-│   │   │   │   │   ├── activity_casual_m.xml
-│   │   │   │   │   └── activity_casual_f.xml
-│   │   │   │   ├── /values
-│   │   │   │   │   ├── colors.xml
-│   │   │   │   │   ├── strings.xml
-│   │   │   │   │   └── styles.xml
-│   │   │   └── AndroidManifest.xml
-│   └── build.gradle
-│
-└── /gradle
-    └── wrapper
-        └── gradle-wrapper.properties
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── br/com/downtown/activity/
+│   │   │       ├── MainActivity.kt
+│   │   │       ├── LoginActivity.kt
+│   │   │       └── StreetMActivity.kt
+│   │   ├── res/
+│   │   │   ├── drawable/
+│   │   │   ├── layout/
+│   │   │   └── values/
+│   │   └── AndroidManifest.xml
+├── build.gradle
+└── gradle/
+
