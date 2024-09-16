@@ -1,0 +1,126 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Botão de voltar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backButton"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center"
+        android:background="#FFFFFF">
+
+        <!-- Título do App -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Downtown"
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#000000"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"/>
+
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            android:textColor="#000000"
+            android:layout_marginTop="16dp"/>
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite seu nome completo"
+            android:background="@drawable/rounded_edittext_background"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+            android:fontFamily="sans-serif"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="#000000"
+            android:layout_marginTop="16dp"/>
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite seu email"
+            android:background="@drawable/rounded_edittext_background"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+            android:fontFamily="sans-serif"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Senha"
+            android:textColor="#000000"
+            android:layout_marginTop="16dp"/>
+
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif"
+            android:hint="********"
+            android:background="@drawable/rounded_edittext_background"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CRIAR"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rounded_button"
+            android:layout_marginTop="24dp"
+            android:padding="12dp"
+
+            />
+
+
+        <TextView
+            android:id="@+id/alreadyHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Já tem conta?"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <!-- Título do App -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Downtown"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#000000"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Título Seus Dados -->
+
+    <!-- Imagem do Perfil -->
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/usuario"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/nomeUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/rounded_edittext_background"
+        android:fontFamily="sans-serif"
+        android:padding="12dp"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/emailUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif"
+        android:textColor="#000000"
+        android:background="@drawable/rounded_edittext_background"
+        android:padding="12dp"
+        android:layout_marginTop="30dp"/>
+
+
+
+    <!-- Botão de Volta -->
+    <Button
+        android:id="@+id/voltarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VOLTA"
+        android:textSize="16sp"
+        android:background="#000000"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="24dp"
+        android:padding="12dp"/>
+</LinearLayout>
