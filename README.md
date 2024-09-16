@@ -12,7 +12,7 @@ Este repositório contém a primeira versão do aplicativo **Downtown**, desenvo
 
 Abaixo está o diagrama da estrutura de pastas do projeto para ajudar a entender a organização dos arquivos e código:
 
-
+```
 App/
 │
 ├── src/
@@ -30,3 +30,4 @@ App/
 ├── build.gradle
 └── gradle/
 
+```
