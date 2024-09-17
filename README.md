@@ -1,4 +1,4 @@
-# Downtown App (Kotlin) - Primeira Versão
+# Jarvis - Downtown App (Kotlin) - Primeira Versão
 
 Este repositório contém a primeira versão do aplicativo **Downtown**, desenvolvido em **Kotlin**. Embora ainda não esteja finalizado, esta entrega inclui as principais telas do projeto e já integra as chamadas de API para cadastro, login, e para buscar informações relacionadas ao usuário autenticado.
 
@@ -7,6 +7,14 @@ Este repositório contém a primeira versão do aplicativo **Downtown**, desenvo
 - **Cadastro de Usuários**: Integração com API para permitir que novos usuários se cadastrem no aplicativo.
 - **Login de Usuários**: Chamadas de API para autenticar os usuários e acessar suas informações.
 - **Telas Principais**: O aplicativo inclui as telas básicas de navegação para explorar diferentes categorias de moda, como "Tela principal", "Tela de login", "Tela de cadastro" , "Tela do perfil do usuario", "Tela de recuperar senha",  "Street Masculino", "Street Feminino", "Casual Masculino" "Casual Feminino" .
+
+## Integrantes 
+- Raphael Pabst rm98525
+- Silvio Junior rm550821
+- Pedro Braga rm551061
+- Eduardo Reis Braga rm551987
+- Vinicius Martins Abdala rm99455
+
 
 ## Estrutura de Pastas
 
