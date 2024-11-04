@@ -11,9 +11,13 @@ Este repositório contém uma aplicação mobile desenvolvida pelo grupo Jarvis,
 - Vinicius Martins Abdala rm99455
 
 
+# Prazo de Entrega
+
+- O prazo estabelecido para a primeira entrega desta fase do projeto é dia 16/09/2024 - (Concluido)
+- O parzo estabelecido para a segunda entrega desta fase do projeto é dia 04/11/2024  - (Concluido)
+
 
 ##  Primeira Versão
-
 
 A primeira versão do aplicativo **Downtown**, desenvolvido em **Kotlin**. Embora ainda não esteja finalizado, esta entrega inclui as principais telas do projeto e já integra as chamadas de API para cadastro, login, e para buscar informações relacionadas ao usuário autenticado.
 
@@ -23,89 +27,22 @@ A primeira versão do aplicativo **Downtown**, desenvolvido em **Kotlin**. Embor
 - **Login de Usuários**: Chamadas de API para autenticar os usuários e acessar suas informações.
 - **Telas Principais**: O aplicativo inclui as telas básicas de navegação para explorar diferentes categorias de moda, como "Tela principal", "Tela de login", "Tela de cadastro" , "Tela do perfil do usuario", "Tela de recuperar senha",  "Street Masculino", "Street Feminino", "Casual Masculino" "Casual Feminino" .
 
+##  Segunda Versão
+Na segunda versão do aplicativo Downtown, implementamos o SharedPreferences para gerenciar a autenticação dos usuários, garantindo uma experiência de login persistente e segura. Também utilizamos AsyncTask para operações assíncronas, otimizando o desempenho e mantendo a interface do usuário responsiva.
 
+Além disso, adicionamos funcionalidades de CRUD (Create, Read, Update, Delete) no aplicativo, permitindo que os usuários interajam e modifiquem dados essenciais diretamente pela interface. Finalizamos a tela de produtos,
+
+Embora o app ainda não esteja completamente finalizado, ele atende todos os requisitos especificados para a entrega do semestre, oferecendo uma base sólida e funcional para futuras melhorias e funcionalidades adicionais.
+
+## Funcionalidades Implementadas
+- SharedPreferences para autenticação
+- Funcionalidades de CRUD PARA USUARIO (Create, Read, Update, Delete)
+- Scroll Listener para carregamento infinito no RecyclerView
 
 
 ## Estrutura de Pastas
 
 Abaixo está o diagrama da estrutura de pastas do projeto para ajudar a entender a organização dos arquivos e código:
 
-```
-/root Downtown*
-│
-├── /app
-│   ├── /manifests
-│   ├── /kotlin+java
-│   │   └── /br
-│   │       └── /com
-│   │           └── /downtown
-│   │               ├── /activity
-│   │               │   ├── CadastroActivity.kt
-│   │               │   ├── CasualFActivity.kt
-│   │               │   ├── CasualMActivity.kt
-│   │               │   ├── ForgotPasswordActivity.kt
-│   │               │   ├── LoginActivity.kt
-│   │               │   ├── MainActivity.kt
-│   │               │   ├── ProfileActivity.kt
-│   │               │   ├── StreetFActivity.kt
-│   │               │   └── StreetMActivity.kt
-│   │               ├── /auth
-│   │               │   └── RetroFit.kt
-│   │               ├── /model
-│   │               │   └── User.kt
-│   │               └── /service
-│   │                   └── ApiService.kt
-│   └── /test
-│       └── /br
-│           └── /com
-│               └── /downtown
-│                   ├── ExampleInstrumentedTest.kt
-│                   └── ExampleUnitTest.kt
-│
-├── /res
-│   ├── /drawable
-│   │   ├── babylook.jpg
-│   │   ├── baseline_arrow_back_ios_24.xml
-│   │   ├── bomberjacket.png
-│   │   ├── botaovoltar.png
-│   │   ├── calcabaggy.png
-│   │   ├── calcacheans.png
-│   │   ├── calcamoletom.jpg
-│   │   ├── camisabox.png
-│   │   ├── camisaover.png
-│   │   ├── camisatee.png
-│   │   ├── casualman.png
-│   │   ├── casualwom.png
-│   │   ├── conjutobaggy.png
-│   │   ├── ic_launcher_background.xml
-│   │   ├── ic_launcher_foreground.xml
-│   │   ├── jaquetacropped.png
-│   │   ├── jaquetaold.png
-│   │   ├── jaquetarigida.png
-│   │   ├── jeansreta.png
-│   │   ├── regata.png
-│   │   ├── rounded_button.xml
-│   │   ├── rounded_edittext_background.xml
-│   │   ├── streetman.png
-│   │   ├── streetwom.png
-│   │   ├── usuario.png
-│   │   ├── vestidobranco.png
-│   │   ├── vintage.jpg
-│   │   └── wildleg.png
-│   ├── /layout
-│   │   ├── activity_cadastro.xml
-│   │   ├── activity_casual_fem.xml
-│   │   ├── activity_casual_masc.xml
-│   │   ├── activity_esquecer_senha.xml
-│   │   ├── activity_login.xml
-│   │   ├── activity_main.xml
-│   │   ├── activity_perfil.xml
-│   │   ├── activity_street_fem.xml
-│   │   └── activity_street_masc.xml
-│
-└── /gradle
-    └── wrapper
-        └── gradle-wrapper.properties
+![image](https://github.com/user-attachments/assets/ff283dc1-0f72-4cb7-b06a-f4dc878af53e)
 
-
-```
