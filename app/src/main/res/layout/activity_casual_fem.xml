@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.CasualFActivity">
 
     <!-- Title Section -->
     <TextView
@@ -20,20 +20,16 @@
         android:layout_marginTop="24dp"/>
 
     <!-- Profile Icon -->
-
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_margin="16dp"
         android:background="?android:attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Botão de voltar"
+        android:contentDescription="Back Button"
         android:src="@drawable/baseline_arrow_back_ios_24"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="32dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/profileImage"
@@ -101,139 +97,14 @@
             android:backgroundTint="#D8B8B0"/>
     </LinearLayout>
 
-
-    <GridLayout
+    <!-- RecyclerView for Product Items -->
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categories_grid"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:columnCount="2"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/filter_buttons"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_margin="8dp">
-
-            <ImageView
-                android:layout_width="152dp"
-                android:layout_height="211dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/jaquetarigida"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Jeans Rigida"
-                android:textSize="14sp"
-                android:layout_marginTop="4dp"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="R$ 250,00"
-                android:textSize="12sp"
-                android:gravity="center"/>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_margin="8dp">
-
-            <ImageView
-                android:layout_width="152dp"
-                android:layout_height="211dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/vestidobranco"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vestido Branco"
-                android:textSize="14sp"
-                android:layout_marginTop="4dp"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="R$ 400,00"
-                android:textSize="12sp"
-                android:gravity="center"/>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_margin="8dp">
-
-            <ImageView
-                android:layout_width="152dp"
-                android:layout_height="211dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/calcamoletom"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:text="Camiseta Vintage"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="R$ 180,00"
-                android:textSize="12sp"
-                android:gravity="center"/>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_margin="8dp">
-
-            <ImageView
-                android:layout_width="152dp"
-                android:layout_height="211dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/babylook"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Baby look Brasil"
-                android:textSize="14sp"
-                android:layout_marginTop="4dp"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="R$ 75,00"
-                android:textSize="12sp"
-                android:gravity="center"/>
-        </LinearLayout>
-
-
-
-    </GridLayout>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

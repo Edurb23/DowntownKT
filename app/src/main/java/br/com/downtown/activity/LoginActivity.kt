@@ -1,5 +1,6 @@
 package br.com.downtown.activity
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -24,8 +25,6 @@ class LoginActivity: AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(R.layout.activity_login)
 
-
-
         val emailField: EditText = findViewById(R.id.email)
         val passwordField: EditText = findViewById(R.id.password)
 
@@ -34,14 +33,11 @@ class LoginActivity: AppCompatActivity() {
             val email = emailField.text.toString()
             val password = passwordField.text.toString()
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                val user = User(name = "", email = email, password = password)
+                val user = User(nome = "", email = email, password = password)
                 loginUser(user)
             } else {
                 Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
             }
-
-
-
         }
 
         val createAccount: TextView = findViewById(R.id.createAccount)
@@ -50,40 +46,38 @@ class LoginActivity: AppCompatActivity() {
             startActivity(intent)
         }
 
-        val Esqueceu: TextView = findViewById(R.id.forgotPassword)
-        Esqueceu.setOnClickListener {
+        val forgotPassword: TextView = findViewById(R.id.forgotPassword)
+        forgotPassword.setOnClickListener {
             val intent = Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
         }
 
-        val botaoVoltar: ImageButton = findViewById(R.id.backButton)
-        botaoVoltar.setOnClickListener {
+        val backButton: ImageButton = findViewById(R.id.backButton)
+        backButton.setOnClickListener {
             finish()
         }
-
-
-
     }
 
     private fun loginUser(user: User) {
-        // Fazendo a requisição de login usando o RetroFit
         RetroFit.api.loginUser(user).enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful) {
                     val userResponse = response.body()
-                    if (userResponse?.message != null) {
-                        Toast.makeText(this@LoginActivity, "Login efetuado com sucesso", Toast.LENGTH_SHORT).show()
+                    val token = userResponse?.token
+                    if (token != null) {
 
-                        // Navegar para a ProfileActivity após o login bem-sucedido
-                        val intent = Intent(this@LoginActivity, ProfileActivity::class.java)
-                        intent.putExtra("email", user.email)
-                        intent.putExtra("name", "Nome do Usuário") // Ajuste conforme o nome do usuário retornado
+                        val sharedPreferences = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+                        sharedPreferences.edit().putString("jwt_token", token).apply()
+
+
+                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
                         startActivity(intent)
+                        finish()
                     } else {
-                        Toast.makeText(this@LoginActivity, "Falha no login", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@LoginActivity, "Token não encontrado na resposta", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    Toast.makeText(this@LoginActivity, "Falha no login: ${response.errorBody()?.string()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Falha no login", Toast.LENGTH_SHORT).show()
                 }
             }
 
