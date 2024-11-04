@@ -27,11 +27,13 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.CadastroActivity" />
         <activity android:name=".activity.ForgotPasswordActivity" />
+        <activity android:name=".activity.EditProfileActivity" />
         <activity android:name=".activity.ProfileActivity" />
         <activity android:name=".activity.StreetMActivity" />
         <activity android:name=".activity.StreetFActivity" />
         <activity android:name=".activity.CasualMActivity" />
         <activity android:name=".activity.CasualFActivity" />
+
 
     </application>
 </manifest>

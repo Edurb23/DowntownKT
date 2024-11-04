@@ -12,14 +12,13 @@ import br.com.downtown.R
 import br.com.downtown.auth.RetroFit
 import br.com.downtown.model.User
 import br.com.downtown.model.UserResponse
-
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CadastroActivity: AppCompatActivity() {
+class CadastroActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?){
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_cadastro)
@@ -33,8 +32,8 @@ class CadastroActivity: AppCompatActivity() {
             finish()
         }
 
-        val CriarButton: Button = findViewById(R.id.registerButton)
-        CriarButton.setOnClickListener {
+        val criarButton: Button = findViewById(R.id.registerButton)
+        criarButton.setOnClickListener {
             val name = nameField.text.toString()
             val email = emailField.text.toString()
             val password = passwordField.text.toString()
@@ -50,27 +49,29 @@ class CadastroActivity: AppCompatActivity() {
         login.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
     private fun registerUser(name: String, email: String, password: String) {
-        val user = User(name, email, password)
+        val user = User(nome = name, email = email, password = password)
 
         RetroFit.api.registerUser(user).enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                if (response.isSuccessful && response.body()?.error == null) {
-
+                if (response.isSuccessful) {
                     Toast.makeText(this@CadastroActivity, "Cadastro efetuado com sucesso", Toast.LENGTH_SHORT).show()
+
+
                     val intent = Intent(this@CadastroActivity, LoginActivity::class.java)
                     startActivity(intent)
+                    finish()
                 } else {
-
-                    Toast.makeText(this@CadastroActivity, response.body()?.error ?: "Erro ao cadastrar", Toast.LENGTH_SHORT).show()
+                    val errorMessage = response.errorBody()?.string() ?: "Erro ao cadastrar"
+                    Toast.makeText(this@CadastroActivity, errorMessage, Toast.LENGTH_SHORT).show()
                 }
             }
 
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                // Erro na requisição
                 Toast.makeText(this@CadastroActivity, "Erro: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })

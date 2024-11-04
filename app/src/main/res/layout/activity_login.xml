@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_margin="16dp"/>
 
-    <!-- O conteúdo principal dentro de um LinearLayout -->
+
     <LinearLayout
         android:id="@+id/contentLayout"
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
         android:gravity="center"
         android:background="#FFFFFF">
 
-        <!-- Título do App -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
 
 
 
-        <!-- Campo de Email -->
+
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
@@ -52,7 +52,7 @@
             android:textColor="#000000"
             android:fontFamily="sans-serif"/>
 
-        <!-- Campo de Senha -->
+
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
@@ -65,7 +65,7 @@
             android:textColor="#000000"
             android:fontFamily="sans-serif"/>
 
-        <!-- Link "Esqueceu a senha?" -->
+
         <TextView
             android:id="@+id/forgotPassword"
             android:layout_width="wrap_content"
@@ -76,7 +76,7 @@
             android:layout_gravity="end"
             android:textColor="#000000"/>
 
-        <!-- Botão de Login -->
+
         <Button
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
@@ -87,7 +87,7 @@
             android:layout_marginTop="24dp"
             android:padding="12dp"/>
 
-        <!-- Link para criar conta -->
+
         <TextView
             android:id="@+id/createAccount"
             android:layout_width="wrap_content"
